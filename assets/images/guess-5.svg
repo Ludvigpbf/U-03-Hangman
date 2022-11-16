@@ -1,0 +1,25 @@
+<svg width="93" height="63" viewBox="0 0 93 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="46.5" y1="23" x2="46.5" y2="53" stroke="black"/>
+<line x1="69.304" y1="3.41729" x2="24.2809" y2="41.5476" stroke="black"/>
+<path d="M52 58C46.5 58 49.5376 58 46.5 58C43.4624 58 44.3537 58 41 58C41 55.2386 43.4624 53 46.5 53C49.5376 53 52 55.2386 52 58Z" fill="black"/>
+<line x1="40" y1="58.5" x2="53" y2="58.5" stroke="black"/>
+<line x1="39" y1="60.5" x2="54" y2="60.5" stroke="black"/>
+<line y1="62.5" x2="93" y2="62.5" stroke="black"/>
+<line x1="46.5" y1="22" x2="46.5" y2="9" stroke="black"/>
+<circle cx="46.5" cy="22.5" r="1.25" fill="black" stroke="white" stroke-width="0.5"/>
+<circle cx="23.8993" cy="41.8708" r="1.25" transform="rotate(-40.2615 23.8993 41.8708)" fill="black" stroke="white" stroke-width="0.5"/>
+<circle cx="69.6855" cy="3.09415" r="1.25" transform="rotate(-40.2615 69.6855 3.09415)" fill="black" stroke="white" stroke-width="0.5"/>
+<path d="M47.75 7C47.75 7.79803 47.5877 8.50815 47.3371 9.00952C47.0789 9.52583 46.7685 9.75 46.5 9.75C46.2315 9.75 45.9211 9.52583 45.6629 9.00952C45.4123 8.50815 45.25 7.79803 45.25 7C45.25 6.20197 45.4123 5.49185 45.6629 4.99048C45.9211 4.47417 46.2315 4.25 46.5 4.25C46.7685 4.25 47.0789 4.47417 47.3371 4.99048C47.5877 5.49185 47.75 6.20197 47.75 7Z" fill="black" stroke="white" stroke-width="0.5"/>
+<line x1="41.1276" y1="26.6249" x2="37.8962" y2="22.8093" stroke="black"/>
+<line x1="51.811" y1="17.577" x2="48.5796" y2="13.7614" stroke="black"/>
+<circle cx="13.5491" cy="48.5491" r="1.5" transform="rotate(1.9062 13.5491 48.5491)" fill="#CE0000"/>
+<circle cx="52.3678" cy="15.1398" r="1.5" transform="rotate(-40.2615 52.3678 15.1398)" fill="#00CC2D"/>
+<line x1="39.25" y1="61" x2="39.25" y2="62" stroke="black" stroke-width="0.5"/>
+<line x1="40.25" y1="59" x2="40.25" y2="60" stroke="black" stroke-width="0.5"/>
+<line x1="53.75" y1="62" x2="53.75" y2="61" stroke="black" stroke-width="0.5"/>
+<line x1="52.75" y1="60" x2="52.75" y2="59" stroke="black" stroke-width="0.5"/>
+<path d="M49.75 15.5C49.75 17.9093 48.2401 19.75 46.5 19.75C44.7599 19.75 43.25 17.9093 43.25 15.5C43.25 13.0907 44.7599 11.25 46.5 11.25C48.2401 11.25 49.75 13.0907 49.75 15.5Z" stroke="black" stroke-width="0.5"/>
+<path d="M16 48L20 46" stroke="black" stroke-width="0.1"/>
+<path d="M16 46L19 43" stroke="black" stroke-width="0.1"/>
+<path d="M14 46L16 42" stroke="black" stroke-width="0.1"/>
+</svg>

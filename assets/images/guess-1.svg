@@ -1,0 +1,22 @@
+<svg width="93" height="59" viewBox="0 0 93 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="46.5" y1="19" x2="46.5" y2="49" stroke="black"/>
+<line x1="76.0188" y1="14.7996" x2="17.4808" y2="22.1691" stroke="black"/>
+<path d="M52 54C46.5 54 49.5376 54 46.5 54C43.4624 54 44.3537 54 41 54C41 51.2386 43.4624 49 46.5 49C49.5376 49 52 51.2386 52 54Z" fill="black"/>
+<line x1="40" y1="54.5" x2="53" y2="54.5" stroke="black"/>
+<line x1="39" y1="56.5" x2="54" y2="56.5" stroke="black"/>
+<line y1="58.5" x2="93" y2="58.5" stroke="black"/>
+<line x1="46.5" y1="18" x2="46.5" y2="5" stroke="black"/>
+<circle cx="46.5" cy="18.5" r="1.25" fill="black" stroke="white" stroke-width="0.5"/>
+<circle cx="16.9848" cy="22.2316" r="1.25" transform="rotate(-7.1754 16.9848 22.2316)" fill="black" stroke="white" stroke-width="0.5"/>
+<circle cx="76.5148" cy="14.7371" r="1.25" transform="rotate(-7.1754 76.5148 14.7371)" fill="black" stroke="white" stroke-width="0.5"/>
+<path d="M47.75 3C47.75 3.79803 47.5877 4.50815 47.3371 5.00952C47.0789 5.52583 46.7685 5.75 46.5 5.75C46.2315 5.75 45.9211 5.52583 45.6629 5.00952C45.4123 4.50815 45.25 3.79803 45.25 3C45.25 2.20197 45.4123 1.49185 45.6629 0.990483C45.9211 0.474166 46.2315 0.25 46.5 0.25C46.7685 0.25 47.0789 0.474166 47.3371 0.990483C47.5877 1.49185 47.75 2.20197 47.75 3Z" fill="black" stroke="white" stroke-width="0.5"/>
+<line x1="39.7422" y1="18.8626" x2="39.1177" y2="13.9018" stroke="black"/>
+<line x1="53.6325" y1="17.1139" x2="53.008" y2="12.1531" stroke="black"/>
+<circle cx="34.089" cy="18.089" r="1.5" transform="rotate(34.9923 34.089 18.089)" fill="#CE0000"/>
+<circle cx="55.4295" cy="15.3758" r="1.5" transform="rotate(-7.1754 55.4295 15.3758)" fill="#00CC2D"/>
+<line x1="39.25" y1="57" x2="39.25" y2="58" stroke="black" stroke-width="0.5"/>
+<line x1="40.25" y1="55" x2="40.25" y2="56" stroke="black" stroke-width="0.5"/>
+<line x1="53.75" y1="58" x2="53.75" y2="57" stroke="black" stroke-width="0.5"/>
+<line x1="52.75" y1="56" x2="52.75" y2="55" stroke="black" stroke-width="0.5"/>
+<path d="M49.75 11.5C49.75 13.9093 48.2401 15.75 46.5 15.75C44.7599 15.75 43.25 13.9093 43.25 11.5C43.25 9.09068 44.7599 7.25 46.5 7.25C48.2401 7.25 49.75 9.09068 49.75 11.5Z" stroke="black" stroke-width="0.5"/>
+</svg>
