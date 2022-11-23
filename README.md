@@ -86,7 +86,7 @@ The player doesn't have to guess a word but instead guess the correct numbers in
 **Syntax:** <br>
 The player needs to guess the correct JavaScript syntax. The image that appears when the players guesses wrong could be true/false image. For each wrong guess a circle of false starts filling up. For each right guess a circle of true starts filling up.
 
-### Variation 3
+### ***Variation 3***
 
 **Scale:** <br>
 When the player guesses the wrong letter the scale starts tipping over. If 5 wrong guesses are made, the scale finally falls to one side.
