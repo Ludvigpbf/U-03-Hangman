@@ -1,0 +1,21 @@
+@mixin desktop {
+  @media screen and (min-width: 750px) {
+    @content;
+  }
+}
+
+$orange: #ff8a00;
+$black: #000000;
+$red: #cc4040;
+$green: #1dd20d;
+$grey: #8b8b8b;
+$pink: #ffd39f;
+
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+}
+
+@mixin transition {
+  transition: all 0.3s ease-in-out;
+}

@@ -100,3 +100,9 @@ Hourglass starts with the sand at the bottom. At first guess the hourglass is tu
 
 **Music:** <br>
 The player is guessing a melody with the help of piano keys.
+
+---
+
+## **What do I need in JS?**
+
+-
