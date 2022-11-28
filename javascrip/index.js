@@ -1,93 +1,77 @@
-/* Categories */
-const animals = ["rabbit", "horse", "dog", "bird"];
-const cities = ["malmö", "umeå", "köping", "örebro"];
-const fruits = ["banana", "apple", "orange", "pear"];
-const movies = ["frost", "jaws", "batman", "avatar"];
+/* Elements */
+
+const header = document.createElement("header");
+header.id = "header";
+document.body.appendChild(header);
+
+const phoneMenu = document.createElement("nav");
+phoneMenu.id = "phone-nav";
+document.getElementById("header").appendChild(phoneMenu);
+
+const startH1 = document.createElement("h1");
+startH1.id = "start-h1";
+startH1.innerText = "Tip the Scale!";
+document.body.appendChild(startH1);
+
+const welcomeText = document.createElement("p");
+welcomeText.id = "welcome-text";
+welcomeText.textContent =
+  "Tip the scale is a game much like Hangman." +
+  "Guess a word by selecting letters one by one." +
+  "\nFor each wrong guess the scale starts to tip over." +
+  "After five wrong guesses the ball hits the ground and the game is over.";
+document.body.appendChild(welcomeText);
+
+/* Dropdown menu */
+
+const menuButtons = ["New Game", "Rules", "Categories", "About"];
+
+function makeMenuBtns(listBtns) {
+  const menuList = document.createElement("ul");
+  menuList.id = "menu-list";
+
+  for (let i = 0; i < menuButtons.length; i++) {
+    const btnList = document.createElement("li");
+    const listBtns = document.createElement("a");
+    listBtns.setAttribute("href", "categories.html");
+    btnList.className = "btnList";
+    listBtns.className = "listBtns";
+    listBtns.appendChild(document.createTextNode(menuButtons[i]));
+    btnList.appendChild(listBtns);
+    menuList.appendChild(btnList);
+  }
+  return menuList;
+}
+document.getElementById("phone-nav").appendChild(makeMenuBtns(menuButtons));
 
 /* Buttons */
-const menuBtn = document.createElement("a");
-menuBtn.setAttribute("href", "#phone-nav");
-menuBtn.innerHTML = "Menu";
+const menuBtn = document.createElement("button");
+menuBtn.textContent = "Menu";
 menuBtn.id = "menu-btn";
-document.getElementById("header").appendChild(menuBtn);
-menuBtn.onclick = function () {
-  open();
-};
+menuBtn.onclick = open;
+document.getElementById("phone-nav").appendChild(menuBtn);
 
-/* const closeBtn = document.createElement("a");
-closeBtn.setAttribute("href", "#header");
-closeBtn.innerHTML = "Close";
-closeBtn.id = "close-btn";
-document.getElementById("").appendChild(closeBtn);
-closeBtn.addEventListener("click", close()); */
-
-const letsGo = document.createElement("a");
-letsGo.setAttribute("href", "categories.html");
-letsGo.innerHTML = "Lets Go!";
-letsGo.id = "letsGo-btn";
-document.getElementById("lets-go").appendChild(letsGo);
-
-const phoneNav = document.getElementById("phone-nav");
-phoneNav.style.display = "none";
-
-const letterList = document.createElement("ul");
-
-/* Letters */
-const letters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-  "Å",
-  "Ä",
-  "Ö",
-];
-
-/* ul */
-const menuList = document.createElement("ul");
-menuList.id = "menu-list2";
-document.getElementById("phone-nav").appendChild(menuList);
-
-const menuListBtns = document.createElement("li");
-document.getElementById("menu-list2").appendChild(menuListBtns);
-/* Loops */
-for (i = 0; i < 29; i++) {
-  const li = document.createElement("li");
-  li.innerHTML = letters[i];
-}
+const letsGoBtn = document.createElement("a");
+letsGoBtn.setAttribute("href", "categories.html");
+letsGoBtn.textContent = "Lets Go!";
+letsGoBtn.id = "letsGo-btn";
+document.body.appendChild(letsGoBtn);
 
 /* Functions */
-
 function open() {
-  const phoneNav = document.getElementById("phone-nav");
-  if (phoneNav.style.display === "none") {
-    phoneNav.style.display = "block";
-  } else {
-    phoneNav.style.display = "none";
+  if (menuBtn.clicked == true) {
+    phoneMenu.style.height = "15vh";
+  } /* else if ((phoneMenu.style.height = "100vh" && menuBtn.clicked == true)) {
+    phoneMenu.style.height = "100vh";
+    document.getElementById("menu-btn").style.transform = "translateY(75vh)";
+    document.getElementById("menu-list").style.transform = "translateY(30vh)";
+    document.getElementById("menu-list").style.visibility = "visible";
+    menuBtn.style.content = "Close";
+  } */ else {
+    phoneMenu.style.height = "100vh";
+    document.getElementById("menu-btn").style.transform = "translateY(75vh)";
+    document.getElementById("menu-list").style.transform = "translateY(30vh)";
+    document.getElementById("menu-list").style.visibility = "visible";
+    menuBtn.style.content = "Close";
   }
-}
-function close() {
-  document.getElementById("phone-nav").style.display = "none";
 }
