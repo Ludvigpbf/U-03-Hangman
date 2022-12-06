@@ -2,44 +2,199 @@
   font-family: "Lato";
   src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
 }
-h1 {
-  font-size: 10vw;
-  align-self: center;
-  margin-top: 5vh;
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+}
+body {
+  display: flex;
+  align-items: center;
+}
+body #about-h1 {
+  display: flex;
+  margin-top: 15vh;
+  margin-bottom: 2.5vh;
   text-decoration: underline;
+  text-underline-offset: 1vh;
+}
+@media screen and (min-width: 800px) {
+  body #about-h1 {
+    font-size: 4vw;
+    margin-top: 10vh;
+  }
+}
+body .about-text {
+  text-align: center;
+  margin: 2vh;
+  max-width: 55vw;
+  font-size: 5vw;
+}
+@media screen and (min-width: 800px) {
+  body .about-text {
+    font-size: 2vw;
+    max-width: 30vw;
+  }
+}
+body #about-ul .about-li p {
+  text-align: left;
+  margin: 0.5vh;
+  font-size: 5vw;
+  font-weight: bold;
+}
+@media screen and (min-width: 800px) {
+  body #about-ul .about-li p {
+    font-size: 2vw;
+  }
+}
+body #githublink {
+  text-decoration: none;
+  color: #ff8a00;
+  font-weight: bold;
+  font-size: 9vw;
+  transition: 0.1s ease-in-out;
+}
+@media screen and (min-width: 800px) {
+  body #githublink {
+    font-size: 4vw;
+  }
+}
+body #githublink:hover {
+  text-decoration: underline;
+  transform: scale(0.98);
 }
 
-p {
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+}
+body {
+  display: flex;
+  align-items: center;
+}
+body #rules-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vw;
+  align-self: center;
+  margin-top: 15vh;
+  margin-bottom: 2.5vh;
+  text-decoration: underline;
+  text-underline-offset: 1vh;
+}
+@media screen and (min-width: 800px) {
+  body #rules-h1 {
+    font-size: 4vw;
+    margin-top: 10vh;
+  }
+}
+body #rules-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 60vw;
+}
+body #rules-ul .rules-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+  margin: 0.5vh;
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  body #rules-ul .rules-li {
+    font-size: 2vw;
+    max-width: 30vw;
+  }
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+}
+#game {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+#game header {
+  position: absolute;
+  top: 0;
+}
+#game .section-h1 {
+  display: flex;
+  font-size: 10vw;
+  align-self: center;
+  margin-top: 16vh;
+  text-decoration: underline;
+  text-underline-offset: 1vh;
+}
+@media screen and (min-width: 800px) {
+  #game .section-h1 {
+    font-size: 5vw;
+    justify-content: center;
+  }
+}
+#game .info-text {
   font-size: 6vw;
   max-width: 60vw;
   align-self: center;
-  margin-top: 3vh;
+  margin-top: 2vh;
   text-align: center;
 }
-
-#category-container {
+@media screen and (min-width: 800px) {
+  #game .info-text {
+    font-size: 3vw;
+    justify-content: center;
+  }
+}
+#game #category-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 40vh;
+  flex-direction: column;
+  min-height: 100%;
   min-width: 100%;
+  transition: 0.5s ease-in-out;
 }
-#category-container ul {
+#game #category-container #category-txt-container {
+  margin-bottom: 5vh;
+}
+#game #category-container #cat-ul {
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
-#category-container ul .catBtn {
+@media screen and (min-width: 800px) {
+  #game #category-container #cat-ul {
+    max-width: 40vw;
+  }
+}
+#game #category-container #cat-ul .cat-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0.4em;
+  align-items: center;
+}
+@media screen and (min-width: 800px) {
+  #game #category-container #cat-ul .cat-list {
+    margin: 2em;
+  }
+}
+#game #category-container #cat-ul .cat-list .cat-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
   border-radius: 50%;
-  height: 2em;
-  max-width: 2em;
+  height: 4em;
+  max-width: 4em;
   border: none;
-  margin: 1em;
   padding: 1em;
   color: #cc4040;
   font-size: 8vw;
@@ -47,63 +202,232 @@ p {
   cursor: pointer;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
 }
-#category-container ul .catBtn:hover {
+@media screen and (min-width: 800px) {
+  #game #category-container #cat-ul .cat-list .cat-btn {
+    font-size: 3vw;
+  }
+}
+#game #category-container #cat-ul .cat-list .cat-btn:hover {
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
 }
-#category-container ul .catBtn:active {
+#game #category-container #cat-ul .cat-list .cat-btn:active {
   transform: scale(0.95) translate(-1%, -1%);
   color: #cc4040;
 }
-
-#startGame-btn {
+#game #startGame-btn {
   display: flex;
+  visibility: hidden;
   align-items: center;
   justify-content: center;
   align-self: center;
-  margin-top: 10vh;
+  margin-top: 5vh;
   min-width: 40vw;
   min-height: 5vh;
-  border-radius: 5%;
+  border-radius: 0.4em;
   border: none;
   background-color: black;
   color: #cc4040;
   font-size: 6vw;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
 }
-#startGame-btn:hover {
+@media screen and (min-width: 800px) {
+  #game #startGame-btn {
+    font-size: 2vw;
+    min-width: 15vw;
+  }
+}
+#game #startGame-btn:hover {
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
+  transform: scale(1.02);
 }
-#startGame-btn:active {
-  transform: scale(0.95) translate(-1%, -1%);
+#game #startGame-btn:active {
+  transform: scale(0.95);
   color: #1dd20d;
 }
-
-body {
+#game #game-container {
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+  transition: 0.5s ease-in-out;
 }
-body p {
-  margin: 0;
+#game #game-container #game-txt-container {
+  margin-bottom: 1vh;
 }
-body li {
-  color: #8b8b8b;
+#game #game-container #scale-section {
+  display: flex;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.107);
+}
+#game #game-container #scale-section #lives-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #scale-section #lives-container {
+    margin-left: 1vw;
+  }
+}
+#game #game-container #scale-section #lives-container #counter {
+  font-size: 5vw;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #scale-section #lives-container #counter {
+    font-size: 2vw;
+  }
+}
+#game #game-container #scale-section #lives-container #guesses-left {
+  display: flex;
+  flex-direction: column;
+}
+#game #game-container #scale-section #lives-container #guesses-left .lives-list {
+  list-style: none;
+  margin: 1vh;
+}
+#game #game-container #scale-section #lives-container #guesses-left .lives-list .circles {
+  border: 0.3vw solid black;
+  border-radius: 50%;
+  min-width: 4vw;
+  min-height: 2vh;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #scale-section #lives-container #guesses-left .lives-list .circles {
+    min-width: 1.5vw;
+    min-height: 2.2vh;
+    border: 0.1vw solid black;
+  }
+}
+#game #game-container #letter-ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #letter-ul {
+    max-width: 80vw;
+  }
+}
+#game #game-container #letter-ul .letter-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 1vw;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background-color: black;
+  color: #ff8a00;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #letter-ul .letter-list {
+    min-height: 6rem;
+    min-width: 6rem;
+    font-size: 3vw;
+    margin: 0.3vw;
+  }
+}
+#game #game-container #letter-ul .letter-list:hover {
+  background-color: #8b8b8b;
+  color: #ffd39f;
+  transform: scale(1.1);
+}
+#game #game-container #letter-ul .letter-list:active {
+  transform: scale(0.95);
+}
+#game #game-container #hint-container {
+  display: flex;
+  align-items: center;
+  min-height: 8vh;
+  min-width: 50vw;
+  justify-content: center;
+}
+#game #game-container #hint-container #hint-button {
+  margin: 1vw;
+  min-width: 12vw;
+  height: 6vh;
+  font-size: 4vw;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.4em;
+  background-color: black;
+  color: #ff8a00;
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #hint-container #hint-button {
+    font-size: 2vw;
+    min-width: 6vw;
+  }
+}
+#game #game-container #hint-container #hint-button:hover {
+  background-color: #ff8a00;
+  color: black;
+  transform: scale(1.05);
+}
+#game #game-container #hint-container #hint-button:active {
+  transform: scale(0.98);
+}
+#game #game-container #hint-container #hint-word {
+  border: 0.1em solid black;
+  border-radius: 0.2em;
+  margin: 1vw;
+  min-height: 4vh;
+  min-width: 50vw;
+  font-size: 4vw;
+  padding: 0.2em;
+}
+@media screen and (min-width: 800px) {
+  #game #game-container #hint-container #hint-word {
+    min-width: 25vw;
+    min-height: 2.2vh;
+    border: 0.1vw solid black;
+  }
 }
 
-body h1 {
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+}
+body #start-h1 {
   font-size: 10vw;
   align-self: center;
   margin-top: 5vh;
   text-decoration: underline;
+  text-underline-offset: 1vh;
 }
-body p {
+@media screen and (min-width: 800px) {
+  body #start-h1 {
+    font-size: 5vw;
+    justify-content: center;
+    align-items: center;
+  }
+}
+body #welcome-text {
   font-size: 6vw;
   max-width: 60vw;
   align-self: center;
   margin-top: 3vh;
   text-align: center;
+}
+@media screen and (min-width: 800px) {
+  body #welcome-text {
+    font-size: 3vw;
+    max-width: 40vw;
+  }
 }
 body #letsGo-btn {
   display: flex;
@@ -113,7 +437,7 @@ body #letsGo-btn {
   margin-top: 10vh;
   min-width: 40vw;
   min-height: 5vh;
-  border-radius: 5%;
+  border-radius: 0.4em;
   border: none;
   background-color: black;
   color: #cc4040;
@@ -122,12 +446,19 @@ body #letsGo-btn {
   font-weight: bold;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
 }
+@media screen and (min-width: 800px) {
+  body #letsGo-btn {
+    font-size: 3vw;
+    min-width: 20vw;
+  }
+}
 body #letsGo-btn:hover {
+  transform: scale(1.02);
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
 }
 body #letsGo-btn:active {
-  transform: scale(0.95) translate(-1%, -1%);
+  transform: scale(0.95);
   color: #cc4040;
 }
 
@@ -150,8 +481,10 @@ body header {
   height: 15vh;
   width: 100%;
 }
-body header h1 {
-  display: none;
+@media screen and (min-width: 800px) {
+  body header {
+    background-color: #cc4040;
+  }
 }
 body header #phone-nav {
   position: absolute;
@@ -167,16 +500,18 @@ body header #phone-nav {
   overflow: hidden;
   transition: 0.5s ease-in-out;
 }
+@media screen and (min-width: 800px) {
+  body header #phone-nav {
+    display: none;
+  }
+}
 body header #phone-nav #menu-list {
   justify-content: center;
   align-items: center;
   flex-direction: column;
   visibility: hidden;
-  top: 20vh;
-  transition: 0.7s ease-in-out;
-}
-body header #phone-nav #menu-list:hover {
-  transform: scale(1);
+  transform: translateY(-40vh);
+  transition: 0.5s ease-in-out;
 }
 body header #phone-nav #menu-list li {
   list-style: none;
@@ -189,7 +524,6 @@ body header #phone-nav #menu-list li {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
-  transition: transform 0.7s ease-in-out;
 }
 body header #phone-nav #menu-list li a {
   text-decoration: none;
@@ -207,30 +541,31 @@ body header #phone-nav #menu-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 5em;
-  min-height: 5em;
+  min-width: 5rem;
+  min-height: 5rem;
   border-radius: 50%;
+  transform: translateY(0vh);
   border: none;
   background-color: black;
   color: #cc4040;
-  font-size: 4vw;
+  font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
   margin: 1em;
   text-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.886);
   font-weight: bold;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
-  transition: transform 0.7s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 body header #phone-nav #menu-btn:hover {
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
 }
 body header #phone-nav #menu-btn:active {
-  transform: scale(0.95) translate(-1%, -1%);
+  transform: scale(0.5);
   color: #cc4040;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
   body header #phone-nav #menu-btn {
     display: none;
   }
@@ -238,7 +573,7 @@ body header #phone-nav #menu-btn:active {
 body header #desktop-nav {
   display: none;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
   body header #phone-nav {
     display: none;
   }

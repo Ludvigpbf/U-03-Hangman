@@ -1,0 +1,40 @@
+@import "_mediaqueries";
+
+body {
+  display: flex;
+  align-items: center;
+  #rules-h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10vw;
+    align-self: center;
+    margin-top: 15vh;
+    margin-bottom: 2.5vh;
+    text-decoration: underline;
+    text-underline-offset: 1vh;
+    @include desktop {
+      font-size: 4vw;
+      margin-top: 10vh;
+    }
+  }
+  #rules-ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 60vw;
+    .rules-li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4vw;
+      margin: 0.5vh;
+      text-align: center;
+      @include desktop {
+        font-size: 2vw;
+        max-width: 30vw;
+      }
+    }
+  }
+}

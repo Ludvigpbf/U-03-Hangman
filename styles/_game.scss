@@ -1,10 +1,261 @@
-body {
+@import "_mediaqueries";
+
+#game {
   display: flex;
-  p {
-    margin: 0;
+  flex-direction: row;
+  overflow: hidden;
+  header {
+    position: absolute;
+    top: 0;
+  }
+  .section-h1 {
+    display: flex;
+    font-size: 10vw;
+    align-self: center;
+    margin-top: 16vh;
+    text-decoration: underline;
+    text-underline-offset: 1vh;
+    @include desktop {
+      font-size: 5vw;
+      justify-content: center;
+    }
+  }
+  .info-text {
+    font-size: 6vw;
+    max-width: 60vw;
+    align-self: center;
+    margin-top: 2vh;
+    text-align: center;
+    @include desktop {
+      font-size: 3vw;
+      justify-content: center;
+    }
+  }
+  #category-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    transition: 0.5s ease-in-out;
+    #category-txt-container {
+      margin-bottom: 5vh;
+    }
+    #cat-ul {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include desktop {
+        max-width: 40vw;
+      }
+      .cat-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin: 0.4em;
+        align-items: center;
+        @include desktop {
+          margin: 2em;
+        }
+        .cat-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: black;
+          border-radius: 50%;
+          height: 4em;
+          max-width: 4em;
+          border: none;
+          padding: 1em;
+          color: $red;
+          font-size: 8vw;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
+          @include desktop {
+            font-size: 3vw;
+          }
+          &:hover {
+            color: $orange;
+            background-color: rgb(41, 41, 41);
+          }
+          &:active {
+            transform: scale(0.95) translate(-1%, -1%);
+            color: $red;
+          }
+        }
+      }
+    }
   }
 
-  li {
-    color: $grey;
+  #startGame-btn {
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 5vh;
+    min-width: 40vw;
+    min-height: 5vh;
+    border-radius: 0.4em;
+    border: none;
+    background-color: black;
+    color: $red;
+    font-size: 6vw;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
+    @include desktop {
+      font-size: 2vw;
+      min-width: 15vw;
+    }
+    &:hover {
+      color: $orange;
+      background-color: rgb(41, 41, 41);
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(0.95);
+      color: $green;
+    }
+  }
+  #game-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    transition: 0.5s ease-in-out;
+    #game-txt-container {
+      margin-bottom: 1vh;
+    }
+    #scale-section {
+      display: flex;
+      align-items: center;
+      height: 30vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.107);
+      #lives-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include desktop {
+          margin-left: 1vw;
+        }
+        #counter {
+          font-size: 5vw;
+          @include desktop {
+            font-size: 2vw;
+          }
+        }
+        #guesses-left {
+          display: flex;
+          flex-direction: column;
+          .lives-list {
+            list-style: none;
+            margin: 1vh;
+            .circles {
+              border: 0.3vw solid black;
+              border-radius: 50%;
+              min-width: 4vw;
+              min-height: 2vh;
+              @include desktop {
+                min-width: 1.5vw;
+                min-height: 2.2vh;
+                border: 0.1vw solid black;
+              }
+            }
+          }
+        }
+      }
+    }
+    #letter-ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      @include desktop {
+        max-width: 80vw;
+      }
+      .letter-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin: 1vw;
+        min-height: 2.5rem;
+        min-width: 2.5rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        background-color: black;
+        color: $orange;
+        font-weight: bold;
+        cursor: pointer;
+        @include desktop {
+          min-height: 6rem;
+          min-width: 6rem;
+          font-size: 3vw;
+          margin: 0.3vw;
+        }
+        &:hover {
+          background-color: $grey;
+          color: $pink;
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+    #hint-container {
+      display: flex;
+      align-items: center;
+      min-height: 8vh;
+      min-width: 50vw;
+      justify-content: center;
+
+      #hint-button {
+        margin: 1vw;
+        min-width: 12vw;
+        height: 6vh;
+        font-size: 4vw;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.4em;
+        background-color: black;
+        color: $orange;
+        cursor: pointer;
+        @include desktop {
+          font-size: 2vw;
+          min-width: 6vw;
+        }
+        &:hover {
+          background-color: $orange;
+          color: black;
+          transform: scale(1.05);
+        }
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+      #hint-word {
+        border: 0.1em solid black;
+        border-radius: 0.2em;
+        margin: 1vw;
+        min-height: 4vh;
+        min-width: 50vw;
+        font-size: 4vw;
+        padding: 0.2em;
+        @include desktop {
+          min-width: 25vw;
+          min-height: 2.2vh;
+          border: 0.1vw solid black;
+        }
+      }
+    }
   }
 }
