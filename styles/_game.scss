@@ -82,9 +82,10 @@
             color: $orange;
             background-color: rgb(41, 41, 41);
           }
-          .active {
-            background-color: $green;
-          }
+        }
+        .active {
+          background-color: $green;
+          color: black;
         }
       }
     }

@@ -211,8 +211,9 @@ body #rules-ul .rules-li {
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
 }
-#game #category-container #cat-ul .cat-list .cat-btn .active {
+#game #category-container #cat-ul .cat-list .active {
   background-color: #1dd20d;
+  color: black;
 }
 #game #startGame-btn {
   display: flex;
