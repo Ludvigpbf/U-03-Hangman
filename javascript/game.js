@@ -82,10 +82,10 @@ document.getElementById("category-container").appendChild(makeUl(categoriesOb));
 
 let categoryBtns = document.getElementsByClassName("cat-btn");
 
-function active(){
-  
+/* function active(){
+
   if (categoryBtns == )
-}
+} */
 
 for (let i = 0; i < categoryBtns.length; i++) {
   categoryBtns[i].addEventListener("click", function () {
