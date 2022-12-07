@@ -35,7 +35,6 @@ let categoriesOb = {
 
 let wordToFind; // Random selected word
 let chosenCategory; // Chosen category
-let hiddenWord;
 
 /* Categories buttons */
 function makeUl(object) {
@@ -47,17 +46,13 @@ function makeUl(object) {
     let catBtn = document.createElement("button");
     catList.className = "cat-list";
     catBtn.className = "cat-btn";
-    catBtn.value = "not-selected";
-    catBtn.onclick = select;
+    /*  catBtn.value = "not-selected"; */
+    /* catBtn.onclick = select; */
     catBtn.appendChild(document.createTextNode(property));
     catList.appendChild(catBtn);
     catUl.appendChild(catList);
-    function select() {
+    /* function select() {
       if (catBtn.value == "not-selected") {
-        /* funktion för att de-select for loop */
-        /* for (let i = 0; i < catBtn.length; i++) {
-          catBtn.value = "not-selected";
-        } */
         catBtn.value = "selected";
         catBtn.style.backgroundColor = "#1dd20d";
         catBtn.style.color = "black";
@@ -79,11 +74,32 @@ function makeUl(object) {
           "black";
         document.getElementById("startGame-btn").style.visibility = "hidden";
       }
-    }
+    } */
   }
   return catUl;
 }
 document.getElementById("category-container").appendChild(makeUl(categoriesOb));
+
+let categoryBtns = document.getElementsByClassName("cat-btn");
+
+function active(){
+  
+  if (categoryBtns == )
+}
+
+for (let i = 0; i < categoryBtns.length; i++) {
+  categoryBtns[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active", "");
+    this.className += " active";
+  });
+}
+
+/* Adding active class to Animals button */
+
+/* let btns = document.getElementsByClassName("cat-btn");
+let activeBtn = btns[0];
+activeBtn.className += " active"; */
 
 /* Get random word function */
 function getRandomWord(arr) {
@@ -172,6 +188,10 @@ scaleImg.src = "/assets/images/start.svg";
 scaleImg.className = "scale-img";
 document.getElementById("scale-section").appendChild(scaleImg);
 
+let wordDiv = document.createElement("div");
+wordDiv.id = "hold";
+document.getElementById("scale-section").appendChild(wordDiv);
+
 /* Letters */
 const letter = [
   "A",
@@ -219,28 +239,6 @@ function letterList(letters) {
   return lettersUl;
 }
 document.getElementById("game-container").appendChild(letterList(letter));
-
-/* Selected word ul */
-result = function () {
-  wordHolder = document.getElementById("hold");
-  correct = document.createElement("ul");
-
-  for (var i = 0; i < word.length; i++) {
-    correct.setAttribute("id", "my-word");
-    guess = document.createElement("li");
-    guess.setAttribute("class", "guess");
-    if (word[i] === "-") {
-      guess.innerHTML = "-";
-      space = 1;
-    } else {
-      guess.innerHTML = "_";
-    }
-
-    geusses.push(guess);
-    wordHolder.appendChild(correct);
-    correct.appendChild(guess);
-  }
-};
 
 /* Hints */
 let hints = {
