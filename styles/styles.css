@@ -201,15 +201,15 @@ body #rules-ul .rules-li {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
+  /*  &:hover {
+    color: $orange;
+    background-color: rgb(41, 41, 41);
+  } */
 }
 @media screen and (min-width: 800px) {
   #game #category-container #cat-ul .cat-list .cat-btn {
     font-size: 3vw;
   }
-}
-#game #category-container #cat-ul .cat-list .cat-btn:hover {
-  color: #ff8a00;
-  background-color: rgb(41, 41, 41);
 }
 #game #category-container #cat-ul .cat-list .active {
   background-color: #1dd20d;
@@ -226,8 +226,8 @@ body #rules-ul .rules-li {
   min-height: 5vh;
   border-radius: 0.4em;
   border: none;
-  background-color: black;
-  color: #cc4040;
+  background-color: #1dd20d;
+  color: black;
   font-size: 6vw;
   text-decoration: none;
   font-weight: bold;

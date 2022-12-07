@@ -45,36 +45,33 @@ function makeUl(object) {
     let catList = document.createElement("li");
     let catBtn = document.createElement("button");
     catList.className = "cat-list";
-    catBtn.className = "cat-btn";
+    catBtn.className = "cat-btn ";
     /*  catBtn.value = "not-selected"; */
-    /* catBtn.onclick = select; */
+    catBtn.onclick = select;
     catBtn.appendChild(document.createTextNode(property));
     catList.appendChild(catBtn);
     catUl.appendChild(catList);
-    /* function select() {
-      if (catBtn.value == "not-selected") {
-        catBtn.value = "selected";
-        catBtn.style.backgroundColor = "#1dd20d";
-        catBtn.style.color = "black";
-        document.getElementById("startGame-btn").style.backgroundColor =
-          "#1dd20d";
-        document.getElementById("startGame-btn").style.color = "black";
+    function select() {
+      if (catBtn == "cat-btn active") {
+        /* catBtn.style.backgroundColor = "#1dd20d";
+        catBtn.style.color = "black"; */
         document.getElementById("startGame-btn").style.visibility = "visible";
-        wordToFind = getRandomWord(categoriesOb[property]);
+
+        /* Chosen random word */
+        /* wordToFind = getRandomWord(categoriesOb[property]);
         chosenCategory = property.toString();
         gameText.textContent = chosenCategory;
-        console.log(wordToFind);
+        console.log(wordToFind); */
+        /* End of chosen random word */
       } else if (catBtn.value == "selected") {
-        catBtn.value = "not-selected";
+        /* catBtn.value = "not-selected";
         catBtn.style.backgroundColor = "black";
         catBtn.style.maxWidth = "4em";
         catBtn.style.color = "#cc4040";
-        catBtn.style.height = "4em";
-        document.getElementById("startGame-btn").style.backgroundColor =
-          "black";
+        catBtn.style.height = "4em"; */
         document.getElementById("startGame-btn").style.visibility = "hidden";
       }
-    } */
+    }
   }
   return catUl;
 }
@@ -82,24 +79,19 @@ document.getElementById("category-container").appendChild(makeUl(categoriesOb));
 
 let categoryBtns = document.getElementsByClassName("cat-btn");
 
-/* function active(){
-
-  if (categoryBtns == )
-} */
-
 for (let i = 0; i < categoryBtns.length; i++) {
   categoryBtns[i].addEventListener("click", function () {
     let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace("active", "");
-    this.className += " active";
+    this.className += "active";
   });
 }
 
 /* Adding active class to Animals button */
 
-/* let btns = document.getElementsByClassName("cat-btn");
+let btns = document.getElementsByClassName("cat-btn");
 let activeBtn = btns[0];
-activeBtn.className += " active"; */
+activeBtn.className += "active";
 
 /* Get random word function */
 function getRandomWord(arr) {
@@ -225,10 +217,11 @@ const letter = [
 function letterList(letters) {
   let lettersUl = document.createElement("ul");
   lettersUl.id = "letter-ul";
+  letters.disabled = false;
   for (let i = 0; i < letters.length; i++) {
     let letters = document.createElement("li");
     const disableButton = () => {
-      console.log(letter.innerText);
+      console.log(letters.innerText);
       letters.disabled = true;
     };
     letters.addEventListener("click", disableButton);
