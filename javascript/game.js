@@ -33,40 +33,42 @@ let categoriesOb = {
   Movies: ["frost", "jaws", "batman", "avatar"],
 };
 
+let wordToFind; // Random selected word
+let chosenCategory; // Chosen category
+let hiddenWord;
+
 /* Categories buttons */
 function makeUl(object) {
-  const catUl = document.createElement("ul");
+  let catUl = document.createElement("ul");
   catUl.id = "cat-ul";
 
   for (let property of Object.keys(object)) {
-    console.log(property);
     let catList = document.createElement("li");
     let catBtn = document.createElement("button");
     catList.className = "cat-list";
     catBtn.className = "cat-btn";
     catBtn.value = "not-selected";
-    /* catBtn.onclick = select; */
+    catBtn.onclick = select;
     catBtn.appendChild(document.createTextNode(property));
     catList.appendChild(catBtn);
     catUl.appendChild(catList);
-    let btns = document.querySelectorAll("cat-btn");
-    /* function select() {
-      console.log(getRandomWord(categoriesOb.Animals));
+    function select() {
       if (catBtn.value == "not-selected") {
+        /* funktion för att de-select for loop */
+        /* for (let i = 0; i < catBtn.length; i++) {
+          catBtn.value = "not-selected";
+        } */
         catBtn.value = "selected";
         catBtn.style.backgroundColor = "#1dd20d";
         catBtn.style.color = "black";
-        if (object.Animals === "Animals") {
-          getRandomWord(categoriesOb.Animals);
-        }
-        if (object.Cities === "Cities") {
-          getRandomWord(categoriesOb.Cities);
-        }
-        console.log(getRandomWord(categoriesOb.Animals));
         document.getElementById("startGame-btn").style.backgroundColor =
           "#1dd20d";
         document.getElementById("startGame-btn").style.color = "black";
         document.getElementById("startGame-btn").style.visibility = "visible";
+        wordToFind = getRandomWord(categoriesOb[property]);
+        chosenCategory = property.toString();
+        gameText.textContent = chosenCategory;
+        console.log(wordToFind);
       } else if (catBtn.value == "selected") {
         catBtn.value = "not-selected";
         catBtn.style.backgroundColor = "black";
@@ -77,60 +79,13 @@ function makeUl(object) {
           "black";
         document.getElementById("startGame-btn").style.visibility = "hidden";
       }
-    } */
+    }
   }
   return catUl;
 }
 document.getElementById("category-container").appendChild(makeUl(categoriesOb));
 
-function select(catBtn, object) {
-  console.log(object);
-  /* console.log(getRandomWord(object.Animals));
-  if (catBtn.value == "not-selected") {
-    catBtn.value = "selected";
-    catBtn.style.backgroundColor = "#1dd20d";
-    catBtn.style.color = "black";
-    if (object.Animals === "Animals") {
-      getRandomWord(object.Animals);
-    }
-    if (object.Cities === "Cities") {
-      getRandomWord(object.Cities);
-    }
-    document.getElementById("startGame-btn").style.backgroundColor = "#1dd20d";
-    document.getElementById("startGame-btn").style.color = "black";
-    document.getElementById("startGame-btn").style.visibility = "visible";
-  } else if (catBtn.value == "selected") {
-    catBtn.value = "not-selected";
-    catBtn.style.backgroundColor = "black";
-    catBtn.style.maxWidth = "4em";
-    catBtn.style.color = "#cc4040";
-    catBtn.style.height = "4em";
-    document.getElementById("startGame-btn").style.backgroundColor = "black";
-    document.getElementById("startGame-btn").style.visibility = "hidden";
-  } */
-}
-
 /* Get random word function */
-function choosen(word) {
-  let choosenWord = document.querySelectorAll("cat-btn");
-  if (word === "Animals") {
-    choosenWord = Math.floor(
-      Math.random() * getRandomWord(categoriesOb.Animals)
-    );
-    console.log(getRandomWord(categoriesOb.Animals));
-  } else if (categoriesOb.Cities == document.querySelectorAll("cat-btn")) {
-    choosenWord = Math.floor(Math.random() * categoriesOb.Cities.length);
-    console.log(choosenWord);
-  } else if (categoriesOb.Fruits == document.querySelectorAll("cat-btn")) {
-    choosenWord = Math.floor(Math.random() * categoriesOb.Fruits.length);
-    console.log(choosenWord);
-  } else if (categoriesOb.Movies == document.querySelectorAll("cat-btn")) {
-    choosenWord = Math.floor(Math.random() * categoriesOb.Movies.length);
-    console.log(choosenWord);
-  }
-  return choosenWord;
-}
-
 function getRandomWord(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -147,7 +102,7 @@ function start() {
   if (startGame.value == "start-game") {
     categoryContainer.style.transform = "translateX(-100vw)";
 
-    gameContainer.style.transform = "translateX(-100vw";
+    gameContainer.style.transform = "translateX(-100vw)";
   }
 }
 
@@ -170,7 +125,7 @@ document.getElementById("game-txt-container").appendChild(gameH1);
 /* Game paragraf */
 const gameText = document.createElement("p");
 gameText.className = "info-text";
-gameText.textContent = "Animals";
+gameText.textContent = chosenCategory;
 document.getElementById("game-txt-container").appendChild(gameText);
 
 /* Scale section */
@@ -178,16 +133,13 @@ const scaleSection = document.createElement("div");
 scaleSection.id = "scale-section";
 document.getElementById("game-container").appendChild(scaleSection);
 
+/* Lives circles */
 const livesContainer = document.createElement("div");
 livesContainer.id = "lives-container";
 document.getElementById("scale-section").appendChild(livesContainer);
 
-const counter = document.createElement("p");
-counter.id = "counter";
-counter.textContent = "0/5";
-document.getElementById("lives-container").appendChild(counter);
-
-const livesUl = ["", "", "", "", ""];
+let livesUl = ["", "", "", "", ""];
+let guessesLeft = 5;
 
 function lives(livesList) {
   const guesses = document.createElement("ul");
@@ -204,20 +156,21 @@ function lives(livesList) {
 }
 document.getElementById("lives-container").appendChild(lives(livesUl));
 
+/* Scale images */
 const images = {
-  0: "start.svg",
-  1: "guess-1.svg",
-  2: "guess-2.svg",
-  3: "guess-3.svg",
-  4: "guess-4.svg",
-  5: "guess-5.svg",
-  6: "guess-6.svg",
+  0: "/assets/images/start.svg",
+  1: "/assets/images/guess-1.svg",
+  2: "/assets/images/guess-2.svg",
+  3: "/assets/images/guess-3.svg",
+  4: "/assets/images/guess-4.svg",
+  5: "/assets/images/guess-5.svg",
+  6: "/assets/images/guess-6.svg",
 };
 
-/* Guessed word */
-const hiddenLetters = document.createElement("ul");
-hiddenLetters.id = "guessed-word";
-document.getElementById("game-container").appendChild(hiddenLetters);
+let scaleImg = document.createElement("img");
+scaleImg.src = "/assets/images/start.svg";
+scaleImg.className = "scale-img";
+document.getElementById("scale-section").appendChild(scaleImg);
 
 /* Letters */
 const letter = [
@@ -250,10 +203,15 @@ const letter = [
 ];
 
 function letterList(letters) {
-  const lettersUl = document.createElement("ul");
+  let lettersUl = document.createElement("ul");
   lettersUl.id = "letter-ul";
   for (let i = 0; i < letters.length; i++) {
-    const letters = document.createElement("li");
+    let letters = document.createElement("li");
+    const disableButton = () => {
+      console.log(letter.innerText);
+      letters.disabled = true;
+    };
+    letters.addEventListener("click", disableButton);
     letters.className = "letter-list";
     letters.appendChild(document.createTextNode(letter[i]));
     lettersUl.appendChild(letters);
@@ -262,8 +220,30 @@ function letterList(letters) {
 }
 document.getElementById("game-container").appendChild(letterList(letter));
 
+/* Selected word ul */
+result = function () {
+  wordHolder = document.getElementById("hold");
+  correct = document.createElement("ul");
+
+  for (var i = 0; i < word.length; i++) {
+    correct.setAttribute("id", "my-word");
+    guess = document.createElement("li");
+    guess.setAttribute("class", "guess");
+    if (word[i] === "-") {
+      guess.innerHTML = "-";
+      space = 1;
+    } else {
+      guess.innerHTML = "_";
+    }
+
+    geusses.push(guess);
+    wordHolder.appendChild(correct);
+    correct.appendChild(guess);
+  }
+};
+
 /* Hints */
-const hints = {
+let hints = {
   rabbit: ["It jumps", "Easter", "Eats carrots"],
   horse: ["Cowboys ride them", "Eats hey", "Have cloves"],
   dog: ["Barks", "Mans best friend", "Love balls"],

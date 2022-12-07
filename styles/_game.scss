@@ -12,7 +12,7 @@
     display: flex;
     font-size: 10vw;
     align-self: center;
-    margin-top: 16vh;
+    margin-top: 10vh;
     text-decoration: underline;
     text-underline-offset: 1vh;
     @include desktop {
@@ -82,9 +82,8 @@
             color: $orange;
             background-color: rgb(41, 41, 41);
           }
-          &:active {
-            transform: scale(0.95) translate(-1%, -1%);
-            color: $red;
+          .active {
+            background-color: $green;
           }
         }
       }
@@ -131,18 +130,22 @@
     min-width: 100%;
     transition: 0.5s ease-in-out;
     #game-txt-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 1vh;
     }
     #scale-section {
       display: flex;
       align-items: center;
+      flex-direction: column;
       height: 30vh;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.107);
       #lives-container {
         display: flex;
-        flex-direction: column;
+        /*  flex-direction: column; */
         align-items: center;
+
         @include desktop {
           margin-left: 1vw;
         }
@@ -154,7 +157,7 @@
         }
         #guesses-left {
           display: flex;
-          flex-direction: column;
+          /* flex-direction: column; */
           .lives-list {
             list-style: none;
             margin: 1vh;
@@ -171,6 +174,9 @@
             }
           }
         }
+      }
+      .scale-img {
+        min-width: 70vw;
       }
     }
     #letter-ul {

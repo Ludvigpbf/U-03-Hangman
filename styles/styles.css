@@ -127,7 +127,7 @@ body #rules-ul .rules-li {
   display: flex;
   font-size: 10vw;
   align-self: center;
-  margin-top: 16vh;
+  margin-top: 10vh;
   text-decoration: underline;
   text-underline-offset: 1vh;
 }
@@ -211,9 +211,8 @@ body #rules-ul .rules-li {
   color: #ff8a00;
   background-color: rgb(41, 41, 41);
 }
-#game #category-container #cat-ul .cat-list .cat-btn:active {
-  transform: scale(0.95) translate(-1%, -1%);
-  color: #cc4040;
+#game #category-container #cat-ul .cat-list .cat-btn .active {
+  background-color: #1dd20d;
 }
 #game #startGame-btn {
   display: flex;
@@ -258,18 +257,21 @@ body #rules-ul .rules-li {
   transition: 0.5s ease-in-out;
 }
 #game #game-container #game-txt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1vh;
 }
 #game #game-container #scale-section {
   display: flex;
   align-items: center;
+  flex-direction: column;
   height: 30vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.107);
 }
 #game #game-container #scale-section #lives-container {
   display: flex;
-  flex-direction: column;
+  /*  flex-direction: column; */
   align-items: center;
 }
 @media screen and (min-width: 800px) {
@@ -287,7 +289,7 @@ body #rules-ul .rules-li {
 }
 #game #game-container #scale-section #lives-container #guesses-left {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 #game #game-container #scale-section #lives-container #guesses-left .lives-list {
   list-style: none;
@@ -305,6 +307,9 @@ body #rules-ul .rules-li {
     min-height: 2.2vh;
     border: 0.1vw solid black;
   }
+}
+#game #game-container #scale-section .scale-img {
+  min-width: 70vw;
 }
 #game #game-container #letter-ul {
   display: flex;
