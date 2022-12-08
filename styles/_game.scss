@@ -78,14 +78,16 @@
           @include desktop {
             font-size: 3vw;
           }
-          /*  &:hover {
+          &:hover {
+            background-color: black;
             color: $orange;
-            background-color: rgb(41, 41, 41);
-          } */
+          }
         }
         .active {
-          background-color: $green;
-          color: black;
+          &:focus {
+            background-color: $green;
+            color: black;
+          }
         }
       }
     }
@@ -202,6 +204,7 @@
         color: $orange;
         font-weight: bold;
         cursor: pointer;
+        border: none;
         @include desktop {
           min-height: 6rem;
           min-width: 6rem;
@@ -213,8 +216,13 @@
           color: $pink;
           transform: scale(1.1);
         }
-        &:active {
-          transform: scale(0.95);
+        /* &:active {
+          transform: scale(0.9);
+        } */
+        &:disabled {
+          background-color: $grey;
+          transform: scale(0.7);
+          color: $pink;
         }
       }
     }
@@ -249,14 +257,17 @@
           transform: scale(0.98);
         }
       }
-      #hint-word {
+      #hint-txt-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 0.1em solid black;
         border-radius: 0.2em;
         margin: 1vw;
         min-height: 4vh;
         min-width: 50vw;
-        font-size: 4vw;
-        padding: 0.2em;
+        font-size: 1rem;
+        font-weight: bold;
         @include desktop {
           min-width: 25vw;
           min-height: 2.2vh;
