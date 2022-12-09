@@ -7,7 +7,7 @@ body {
     text-decoration: underline;
     text-underline-offset: 1vh;
     @include desktop {
-      font-size: 5vw;
+      font-size: 4vw;
       justify-content: center;
       align-items: center;
     }
@@ -19,7 +19,8 @@ body {
     margin-top: 3vh;
     text-align: center;
     @include desktop {
-      font-size: 3vw;
+      margin-top: 8vh;
+      font-size: 2.5vw;
       max-width: 40vw;
     }
   }
@@ -41,8 +42,8 @@ body {
     font-weight: bold;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.6);
     @include desktop {
-      font-size: 3vw;
-      min-width: 20vw;
+      font-size: 2vw;
+      min-width: 15vw;
     }
     &:hover {
       transform: scale(1.02);

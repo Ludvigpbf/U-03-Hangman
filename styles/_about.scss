@@ -11,7 +11,7 @@ body {
     text-decoration: underline;
     text-underline-offset: 1vh;
     @include desktop {
-      font-size: 4vw;
+      font-size: 2.5vw;
       margin-top: 10vh;
     }
   }
@@ -21,7 +21,7 @@ body {
     max-width: 55vw;
     font-size: 5vw;
     @include desktop {
-      font-size: 2vw;
+      font-size: 1.5vw;
       max-width: 30vw;
     }
   }
@@ -33,7 +33,7 @@ body {
         font-size: 5vw;
         font-weight: bold;
         @include desktop {
-          font-size: 2vw;
+          font-size: 1.5vw;
         }
       }
     }
@@ -45,7 +45,7 @@ body {
     font-size: 9vw;
     transition: 0.1s ease-in-out;
     @include desktop {
-      font-size: 4vw;
+      font-size: 3vw;
     }
     &:hover {
       text-decoration: underline;

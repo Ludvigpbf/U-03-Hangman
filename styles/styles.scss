@@ -39,7 +39,7 @@ body {
       @include desktop {
         display: none;
       }
-      #menu-list {
+      #menu-list-phone {
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -106,6 +106,31 @@ body {
     }
     #desktop-nav {
       display: none;
+      @include desktop {
+        display: flex;
+        #menu-list-desktop {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          list-style: none;
+          min-width: 40vw;
+
+          .btnListDesk {
+            .listBtnsDesk {
+              text-decoration: none;
+              background-color: black;
+              color: $red;
+              font-size: 1.5rem;
+              border-radius: 0.2em;
+              margin: 1rem;
+              padding: 0.5rem 1rem 0.5rem 1rem;
+              &:hover {
+                color: $orange;
+              }
+            }
+          }
+        }
+      }
     }
     @include desktop {
       #phone-nav {

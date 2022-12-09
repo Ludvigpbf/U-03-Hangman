@@ -35,6 +35,7 @@ let categoriesOb = {
 
 let wordToFind; // Random selected word
 let chosenCategory; // Chosen category
+let wordArray = [];
 
 /* Categories buttons */
 function makeUl(object) {
@@ -50,20 +51,48 @@ function makeUl(object) {
     catBtn.appendChild(document.createTextNode(property));
     catList.appendChild(catBtn);
     catUl.appendChild(catList);
+
     function select() {
-      if (catBtn.className == "cat-btn active") {
-        document.getElementById("startGame-btn").style.visibility = "visible";
-        wordToFind = getRandomWord(categoriesOb[property]);
-        chosenCategory = property.toString();
-        gameText.textContent = chosenCategory;
-        console.log(chosenCategory);
-        console.log(wordToFind);
-      }
+      document.getElementById("startGame-btn").style.visibility = "visible";
+      wordToFind = getRandomWord(categoriesOb[property]);
+      chosenCategory = property.toString();
+      gameText.textContent = chosenCategory;
+      secretWord();
+      console.log(chosenCategory);
+      console.log(wordToFind);
+      console.log(wordArray);
     }
   }
   return catUl;
 }
 document.getElementById("category-container").appendChild(makeUl(categoriesOb));
+
+/* Creating list and change letters into ?  */
+function secretWord() {
+  wordHolder = document.getElementById("word-holder");
+  correct = document.createElement("ul");
+
+  for (let i = 0; i < wordToFind.length; i++) {
+    correct.setAttribute("id", "my-word");
+    guess = document.createElement("li");
+    guess.setAttribute("class", "guess");
+    guess.innerHTML = "?";
+
+    wordArray = wordToFind.split("");
+    wordArray.push(guess);
+    wordHolder.appendChild(correct);
+    correct.appendChild(guess);
+  }
+}
+
+function guessedLetter() {
+  for (let i = 0; i < letter.length; i++) {
+    wordArray[i] = letter;
+    if (letter.textContent == wordArray.textContent) {
+      guess.innerHTML = wordArray.textContent;
+    }
+  }
+}
 
 /* Change active class on buttons */
 let categoryBtns = document.getElementsByClassName("cat-btn");
@@ -132,7 +161,7 @@ document.getElementById("game-txt-container").appendChild(gameH1);
 /* Game paragraf */
 const gameText = document.createElement("p");
 gameText.className = "info-text";
-gameText.textContent = chosenCategory;
+/* gameText.textContent = chosenCategory; */
 document.getElementById("game-txt-container").appendChild(gameText);
 
 /* Scale section */
@@ -180,7 +209,7 @@ scaleImg.className = "scale-img";
 document.getElementById("scale-section").appendChild(scaleImg);
 
 let wordDiv = document.createElement("div");
-wordDiv.id = "hold";
+wordDiv.id = "word-holder";
 document.getElementById("scale-section").appendChild(wordDiv);
 
 /* Letters */
@@ -216,13 +245,17 @@ const letter = [
 function letterList(letters) {
   let lettersUl = document.createElement("ul");
   lettersUl.id = "letter-ul";
+
   for (let i = 0; i < letters.length; i++) {
     let letters = document.createElement("button");
+    let wrong = document.getElementsByClassName("circles");
     letters.setAttribute("disabled", "false");
     letters.disabled = false;
+
     const disableButton = () => {
       console.log(letters.innerText);
       letters.disabled = true;
+      wrong[0].style.backgroundColor = "red";
     };
     letters.addEventListener("click", disableButton);
     letters.className = "letter-list";
@@ -233,38 +266,34 @@ function letterList(letters) {
 }
 document.getElementById("game-container").appendChild(letterList(letter));
 
-/* let alphabet = document.getElementsByClassName("letter-list");
-for (const button of alphabet) {
-  button.addEventListener("click", disableButton());
-} */
-
 /* Hints */
+
 let animalHints = {
-  rabbit: ["It jumps", "Easter", "Eats carrots"],
-  horse: ["Cowboys ride them", "Eats hey", "Have cloves"],
-  dog: ["Barks", "Mans best friend", "Love balls"],
-  bird: ["Tweets", "Can fly", "Eats maggots"],
+  rabbit: "Easter",
+  horse: "Eats hey",
+  dog: "Mans best friend",
+  bird: "Tweets",
 };
 
 let citiesHints = {
-  paris: ["Baguett", "Wine", "Notre dame"],
-  london: ["Eye", "Harry potter", "Picadely cirkus"],
-  boston: ["Baked beans", "Marathon", "Cheers"],
-  prague: ["Beer", "100 Towers", "Wenceslas Square"],
+  paris: "Notre dame",
+  london: "Picadely cirkus",
+  boston: "Marathon",
+  prague: "Wenceslas Square",
 };
 
 let fruitsHints = {
-  banana: ["Yellow", "Monkeys love them", "You peel them"],
-  apple: ["Round", "Good for pies", "Good for juice"],
-  orange: ["Tequila sunrise", "Juice", "Christmas"],
-  pear: ["Smoothie", "Desserts", "Almost apple"],
+  banana: "Monkeys love them",
+  apple: "Round",
+  orange: "Tequila sunrise",
+  pear: "Almost apple",
 };
 
 let moviesHints = {
-  frost: ["Elsa", "Olof", "Sven"],
-  jaws: ["Shark", "Boat", "Eaten"],
-  batman: ["Dark Knight", "Alfred", "Gotham"],
-  avatar: ["Jake Sully", "Blue", "New moon"],
+  frost: "Ice queen",
+  jaws: "Shark",
+  batman: "Gotham",
+  avatar: "Jake Sully",
 };
 
 const hintContainer = document.createElement("div");
