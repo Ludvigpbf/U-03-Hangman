@@ -325,12 +325,11 @@ body #rules-ul .rules-li {
   text-align: center;
   width: 70vw;
 }
-#game #game-container #scale-section #word-holder #result-word {
+#game #game-container #scale-section #word-holder #result-text {
   color: black;
   font-size: 1.5rem;
   text-align: center;
   text-transform: none;
-  /* width: 70vw; */
 }
 #game #game-container #letter-ul {
   display: flex;
