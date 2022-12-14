@@ -1,12 +1,15 @@
+/* About header */
 const header = document.createElement("header");
 header.id = "header";
 document.body.appendChild(header);
 
+/* About heading */
 const aboutH1 = document.createElement("h1");
 aboutH1.id = "about-h1";
 aboutH1.innerText = "About";
 document.body.appendChild(aboutH1);
 
+/* About text */
 const aboutText = document.createElement("p");
 aboutText.className = "about-text";
 aboutText.innerText = [
@@ -15,8 +18,10 @@ aboutText.innerText = [
 ];
 document.body.appendChild(aboutText);
 
+/* Languages list */
 const aboutList = ["HTML", "CSS", "JavaScript"];
 
+/* Function to create languages list */
 function languages() {
   const aboutUl = document.createElement("ul");
   aboutUl.id = "about-ul";
@@ -35,11 +40,13 @@ function languages() {
 }
 document.body.appendChild(languages(aboutList));
 
+/* About second text */
 const aboutText2 = document.createElement("p");
 aboutText2.className = "about-text";
 aboutText2.innerText = ["To see more projects, " + "\nvisit my:"];
 document.body.appendChild(aboutText2);
 
+/* Link to my github */
 const githubLink = document.createElement("a");
 githubLink.setAttribute(
   "href",

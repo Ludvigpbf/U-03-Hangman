@@ -1,14 +1,15 @@
-/* Elements */
-
+/* Header */
 const header = document.createElement("header");
 header.id = "header";
 document.body.appendChild(header);
 
+/* Welcome heading */
 const startH1 = document.createElement("h1");
 startH1.id = "start-h1";
 startH1.innerText = "Tip the Scale!";
 document.body.appendChild(startH1);
 
+/* Welcome text */
 const welcomeText = document.createElement("p");
 welcomeText.id = "welcome-text";
 welcomeText.textContent =
@@ -18,6 +19,7 @@ welcomeText.textContent =
   "\nAfter five wrong guesses the ball hits the ground and the game is over.";
 document.body.appendChild(welcomeText);
 
+/* Button to go to select a category */
 const letsGoBtn = document.createElement("a");
 letsGoBtn.setAttribute("href", "game.html");
 letsGoBtn.textContent = "Lets Go!";

@@ -1,14 +1,15 @@
-/* Elements */
-
+/* Header */
 const header = document.createElement("header");
 header.id = "header";
 document.body.appendChild(header);
 
+/* Rules heading */
 const rulesH1 = document.createElement("h1");
 rulesH1.id = "rules-h1";
 rulesH1.innerText = "Rules";
 document.body.appendChild(rulesH1);
 
+/* List of rules */
 const rulesList = [
   "- First select a category.",
   "- Then start the game by selecting a letter.",
@@ -19,6 +20,7 @@ const rulesList = [
   "- When the word is complete the game is won!",
 ];
 
+/* Function to create list of rules */
 function text() {
   const rulesUl = document.createElement("ul");
   rulesUl.id = "rules-ul";
